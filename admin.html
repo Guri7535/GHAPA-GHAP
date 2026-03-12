@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Video Admin Panel</title>
+
+<style>
+
+body{
+background:#000;
+color:white;
+font-family:Arial;
+padding:40px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+button{
+padding:12px 25px;
+background:red;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+.video{
+margin-top:10px;
+padding:10px;
+background:#111;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Admin Panel - Add Videos</h1>
+
+<input id="title" placeholder="Video Title">
+
+<input id="link" placeholder="Video Embed Link">
+
+<button onclick="addVideo()">Add Video</button>
+
+<h2>Stored Videos</h2>
+
+<div id="list"></div>
+
+<script>
+
+/* simple password */
+
+var pass = prompt("Enter admin password");
+
+if(pass !== "12345"){
+document.body.innerHTML = "Access Denied";
+}
+
+/* load saved videos */
+
+var videos = JSON.parse(localStorage.getItem("videos")) || [];
+
+function showVideos(){
+
+var html = "";
+
+videos.forEach(function(v){
+
+html += `<div class="video">${v.title}</div>`;
+
+});
+
+document.getElementById("list").innerHTML = html;
+
+}
+
+showVideos();
+
+function addVideo(){
+
+var title = document.getElementById("title").value;
+var link = document.getElementById("link").value;
+
+videos.push({title:title,link:link});
+
+localStorage.setItem("videos",JSON.stringify(videos));
+
+showVideos();
+
+}
+
+</script>
+
+</body>
+</html>
