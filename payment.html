@@ -1,89 +1,34 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-<title>Unlock Premium Videos</title>
+<title>Buy Video Access</title>
 
 <style>
 
 body{
-margin:0;
-padding:0;
-font-family:Arial, sans-serif;
+font-family:Arial;
+background:#111;
 color:white;
 text-align:center;
-background:radial-gradient(circle at center,#111,#000);
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
+padding-top:100px;
 }
 
-.container{
-width:95%;
-max-width:700px;
-}
-
-h1{
-font-size:42px;
-font-weight:800;
-margin-bottom:10px;
-}
-
-p{
-font-size:22px;
-opacity:0.9;
-}
-
-.qr{
-width:320px;
-margin-top:25px;
-border-radius:16px;
-border:3px solid #333;
-}
-
-.upi-icons{
-display:flex;
-justify-content:center;
-gap:40px;
-margin-top:35px;
-}
-
-.upi-icons img{
-width:95px;
-height:95px;
-cursor:pointer;
-transition:0.25s;
-}
-
-.upi-icons img:hover{
-transform:scale(1.15);
-}
-
-input{
-width:85%;
-padding:18px;
-margin-top:35px;
+.box{
+background:#222;
+padding:40px;
+width:350px;
+margin:auto;
 border-radius:10px;
-border:none;
-font-size:20px;
-text-align:center;
 }
 
 button{
-padding:20px 60px;
-margin-top:30px;
-background:#ff2a2a;
+padding:15px 30px;
+font-size:18px;
+background:#ff6a00;
 border:none;
-border-radius:12px;
-font-size:24px;
 color:white;
+border-radius:8px;
 cursor:pointer;
-font-weight:bold;
-}
-
-button:hover{
-background:#ff0000;
 }
 
 </style>
@@ -92,59 +37,21 @@ background:#ff0000;
 
 <body>
 
-<div class="container">
+<div class="box">
 
-<h1>Pay ₹99 to Unlock Videos</h1>
+<h2>Exclusive Video Access</h2>
 
-<p>Scan QR or pay using UPI apps</p>
+<p>Price: ₹99</p>
 
-<img src="qr.png" class="qr">
+<p>After payment you will get a password to unlock the video.</p>
 
-<div class="upi-icons">
+<a href="https://imjo.in/https://imjo.in/Yx93wJ" target="_blank">
 
-<a href="tez://upi/pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
-<img src="gpay.png">
-</a>
+<button>Pay Now</button>
 
-<a href="phonepe://pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
-<img src="phonepe.png">
-</a>
-
-<a href="paytmmp://pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
-<img src="paytm.png">
 </a>
 
 </div>
-
-<input id="txnid" placeholder="Enter UPI Transaction ID">
-
-<br>
-
-<button onclick="verifyPayment()">Verify Payment</button>
-
-</div>
-
-<script>
-
-function verifyPayment(){
-
-var txn = document.getElementById("txnid").value;
-
-if(txn.length < 8){
-
-alert("Invalid Transaction ID");
-
-return;
-
-}
-
-localStorage.setItem("paid","yes");
-
-window.location.href="videos.html";
-
-}
-
-</script>
 
 </body>
 </html>
