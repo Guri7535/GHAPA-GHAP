@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+
+<header>Unlock Premium Videos</header>
+
+<div class="container">
+
+<h2>Pay ₹99 to watch all videos</h2>
+
+<br>
+
+<button id="payBtn">Pay Now</button>
+
+</div>
+
+<script>
+
+var options = {
+
+key: "YOUR_RAZORPAY_KEY",
+
+amount: "9900",
+
+currency: "INR",
+
+name: "Premium Videos",
+
+description: "Video Access",
+
+handler: function(response){
+
+window.location.href="videos.html";
+
+}
+
+};
+
+var rzp = new Razorpay(options);
+
+document.getElementById('payBtn').onclick = function(e){
+
+rzp.open();
+
+e.preventDefault();
+
+}
+
+</script>
+
+</body>
+</html>
