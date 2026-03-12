@@ -1,8 +1,18 @@
+<script>
+
+if(localStorage.getItem("paid") !== "yes"){
+
+window.location.href="payment.html";
+
+}
+
+</script>
+
 <!DOCTYPE html>
 
 <html>
 <head>
-<title>Video Library</title>
+<title>Premium Video Library</title>
 
 <style>
 
@@ -10,18 +20,30 @@ body{
 background:#000;
 color:white;
 font-family:Arial;
+margin:0;
+}
+
+h1{
+text-align:center;
+padding:20px;
 }
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:20px;
 padding:40px;
 }
 
-iframe{
+.grid img{
 width:100%;
-height:200px;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.grid img:hover{
+transform:scale(1.05);
 }
 
 </style>
@@ -30,30 +52,31 @@ height:200px;
 
 <body>
 
-<h1 style="text-align:center;">Premium Video Library</h1>
+<h1>Premium Video Library</h1>
 
-<div class="grid" id="videos"></div>
+<div class="grid">
 
-<script>
+<a href="VIDEO_LINK_1" target="_blank"><img src="thumb1.jpg"></a> <a href="VIDEO_LINK_2" target="_blank"><img src="thumb2.jpg"></a> <a href="VIDEO_LINK_3" target="_blank"><img src="thumb3.jpg"></a> <a href="VIDEO_LINK_4" target="_blank"><img src="thumb4.jpg"></a> <a href="VIDEO_LINK_5" target="_blank"><img src="thumb5.jpg"></a> <a href="VIDEO_LINK_6" target="_blank"><img src="thumb6.jpg"></a> <a href="VIDEO_LINK_7" target="_blank"><img src="thumb7.jpg"></a> <a href="VIDEO_LINK_8" target="_blank"><img src="thumb8.jpg"></a> <a href="VIDEO_LINK_9" target="_blank"><img src="thumb9.jpg"></a> <a href="VIDEO_LINK_10" target="_blank"><img src="thumb10.jpg"></a>
 
-var videos = JSON.parse(localStorage.getItem("videos")) || [];
+<a href="VIDEO_LINK_11" target="_blank"><img src="thumb11.jpg"></a> <a href="VIDEO_LINK_12" target="_blank"><img src="thumb12.jpg"></a> <a href="VIDEO_LINK_13" target="_blank"><img src="thumb13.jpg"></a> <a href="VIDEO_LINK_14" target="_blank"><img src="thumb14.jpg"></a> <a href="VIDEO_LINK_15" target="_blank"><img src="thumb15.jpg"></a> <a href="VIDEO_LINK_16" target="_blank"><img src="thumb16.jpg"></a> <a href="VIDEO_LINK_17" target="_blank"><img src="thumb17.jpg"></a> <a href="VIDEO_LINK_18" target="_blank"><img src="thumb18.jpg"></a> <a href="VIDEO_LINK_19" target="_blank"><img src="thumb19.jpg"></a> <a href="VIDEO_LINK_20" target="_blank"><img src="thumb20.jpg"></a>
 
-var html="";
+<a href="VIDEO_LINK_21" target="_blank"><img src="thumb21.jpg"></a> <a href="VIDEO_LINK_22" target="_blank"><img src="thumb22.jpg"></a> <a href="VIDEO_LINK_23" target="_blank"><img src="thumb23.jpg"></a> <a href="VIDEO_LINK_24" target="_blank"><img src="thumb24.jpg"></a> <a href="VIDEO_LINK_25" target="_blank"><img src="thumb25.jpg"></a> <a href="VIDEO_LINK_26" target="_blank"><img src="thumb26.jpg"></a> <a href="VIDEO_LINK_27" target="_blank"><img src="thumb27.jpg"></a> <a href="VIDEO_LINK_28" target="_blank"><img src="thumb28.jpg"></a> <a href="VIDEO_LINK_29" target="_blank"><img src="thumb29.jpg"></a> <a href="VIDEO_LINK_30" target="_blank"><img src="thumb30.jpg"></a>
 
-videos.forEach(function(v){
+<a href="VIDEO_LINK_31" target="_blank"><img src="thumb31.jpg"></a> <a href="VIDEO_LINK_32" target="_blank"><img src="thumb32.jpg"></a> <a href="VIDEO_LINK_33" target="_blank"><img src="thumb33.jpg"></a> <a href="VIDEO_LINK_34" target="_blank"><img src="thumb34.jpg"></a> <a href="VIDEO_LINK_35" target="_blank"><img src="thumb35.jpg"></a> <a href="VIDEO_LINK_36" target="_blank"><img src="thumb36.jpg"></a> <a href="VIDEO_LINK_37" target="_blank"><img src="thumb37.jpg"></a> <a href="VIDEO_LINK_38" target="_blank"><img src="thumb38.jpg"></a> <a href="VIDEO_LINK_39" target="_blank"><img src="thumb39.jpg"></a> <a href="VIDEO_LINK_40" target="_blank"><img src="thumb40.jpg"></a>
 
-html += `
-<div>
-<iframe src="${v.link}" allowfullscreen></iframe>
-<p>${v.title}</p>
+<a href="VIDEO_LINK_41" target="_blank"><img src="thumb41.jpg"></a> <a href="VIDEO_LINK_42" target="_blank"><img src="thumb42.jpg"></a> <a href="VIDEO_LINK_43" target="_blank"><img src="thumb43.jpg"></a> <a href="VIDEO_LINK_44" target="_blank"><img src="thumb44.jpg"></a> <a href="VIDEO_LINK_45" target="_blank"><img src="thumb45.jpg"></a> <a href="VIDEO_LINK_46" target="_blank"><img src="thumb46.jpg"></a> <a href="VIDEO_LINK_47" target="_blank"><img src="thumb47.jpg"></a> <a href="VIDEO_LINK_48" target="_blank"><img src="thumb48.jpg"></a> <a href="VIDEO_LINK_49" target="_blank"><img src="thumb49.jpg"></a> <a href="VIDEO_LINK_50" target="_blank"><img src="thumb50.jpg"></a>
+
+<a href="VIDEO_LINK_51" target="_blank"><img src="thumb51.jpg"></a> <a href="VIDEO_LINK_52" target="_blank"><img src="thumb52.jpg"></a> <a href="VIDEO_LINK_53" target="_blank"><img src="thumb53.jpg"></a> <a href="VIDEO_LINK_54" target="_blank"><img src="thumb54.jpg"></a> <a href="VIDEO_LINK_55" target="_blank"><img src="thumb55.jpg"></a> <a href="VIDEO_LINK_56" target="_blank"><img src="thumb56.jpg"></a> <a href="VIDEO_LINK_57" target="_blank"><img src="thumb57.jpg"></a> <a href="VIDEO_LINK_58" target="_blank"><img src="thumb58.jpg"></a> <a href="VIDEO_LINK_59" target="_blank"><img src="thumb59.jpg"></a> <a href="VIDEO_LINK_60" target="_blank"><img src="thumb60.jpg"></a>
+
+<a href="VIDEO_LINK_61" target="_blank"><img src="thumb61.jpg"></a> <a href="VIDEO_LINK_62" target="_blank"><img src="thumb62.jpg"></a> <a href="VIDEO_LINK_63" target="_blank"><img src="thumb63.jpg"></a> <a href="VIDEO_LINK_64" target="_blank"><img src="thumb64.jpg"></a> <a href="VIDEO_LINK_65" target="_blank"><img src="thumb65.jpg"></a> <a href="VIDEO_LINK_66" target="_blank"><img src="thumb66.jpg"></a> <a href="VIDEO_LINK_67" target="_blank"><img src="thumb67.jpg"></a> <a href="VIDEO_LINK_68" target="_blank"><img src="thumb68.jpg"></a> <a href="VIDEO_LINK_69" target="_blank"><img src="thumb69.jpg"></a> <a href="VIDEO_LINK_70" target="_blank"><img src="thumb70.jpg"></a>
+
+<a href="VIDEO_LINK_71" target="_blank"><img src="thumb71.jpg"></a> <a href="VIDEO_LINK_72" target="_blank"><img src="thumb72.jpg"></a> <a href="VIDEO_LINK_73" target="_blank"><img src="thumb73.jpg"></a> <a href="VIDEO_LINK_74" target="_blank"><img src="thumb74.jpg"></a> <a href="VIDEO_LINK_75" target="_blank"><img src="thumb75.jpg"></a> <a href="VIDEO_LINK_76" target="_blank"><img src="thumb76.jpg"></a> <a href="VIDEO_LINK_77" target="_blank"><img src="thumb77.jpg"></a> <a href="VIDEO_LINK_78" target="_blank"><img src="thumb78.jpg"></a> <a href="VIDEO_LINK_79" target="_blank"><img src="thumb79.jpg"></a> <a href="VIDEO_LINK_80" target="_blank"><img src="thumb80.jpg"></a>
+
+<a href="VIDEO_LINK_81" target="_blank"><img src="thumb81.jpg"></a> <a href="VIDEO_LINK_82" target="_blank"><img src="thumb82.jpg"></a> <a href="VIDEO_LINK_83" target="_blank"><img src="thumb83.jpg"></a> <a href="VIDEO_LINK_84" target="_blank"><img src="thumb84.jpg"></a> <a href="VIDEO_LINK_85" target="_blank"><img src="thumb85.jpg"></a> <a href="VIDEO_LINK_86" target="_blank"><img src="thumb86.jpg"></a> <a href="VIDEO_LINK_87" target="_blank"><img src="thumb87.jpg"></a> <a href="VIDEO_LINK_88" target="_blank"><img src="thumb88.jpg"></a> <a href="VIDEO_LINK_89" target="_blank"><img src="thumb89.jpg"></a> <a href="VIDEO_LINK_90" target="_blank"><img src="thumb90.jpg"></a>
+
+<a href="VIDEO_LINK_91" target="_blank"><img src="thumb91.jpg"></a> <a href="VIDEO_LINK_92" target="_blank"><img src="thumb92.jpg"></a> <a href="VIDEO_LINK_93" target="_blank"><img src="thumb93.jpg"></a> <a href="VIDEO_LINK_94" target="_blank"><img src="thumb94.jpg"></a> <a href="VIDEO_LINK_95" target="_blank"><img src="thumb95.jpg"></a> <a href="VIDEO_LINK_96" target="_blank"><img src="thumb96.jpg"></a> <a href="VIDEO_LINK_97" target="_blank"><img src="thumb97.jpg"></a> <a href="VIDEO_LINK_98" target="_blank"><img src="thumb98.jpg"></a> <a href="VIDEO_LINK_99" target="_blank"><img src="thumb99.jpg"></a> <a href="VIDEO_LINK_100" target="_blank"><img src="thumb100.jpg"></a>
+
 </div>
-`;
-
-});
-
-document.getElementById("videos").innerHTML = html;
-
-</script>
 
 </body>
 </html>

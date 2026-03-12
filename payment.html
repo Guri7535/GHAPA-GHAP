@@ -1,75 +1,40 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Live Offer</title>
-
-<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<title>UPI Payment</title>
 
 <style>
 
 body{
-margin:0;
-height:100vh;
-font-family:Arial, Helvetica, sans-serif;
-background:#000;
+background:black;
 color:white;
-display:flex;
-align-items:center;
-justify-content:center;
+font-family:Arial;
 text-align:center;
+padding-top:80px;
 }
 
-/* Container */
-
-.container{
-width:90%;
+img{
+width:220px;
+margin-top:20px;
 }
 
-/* Huge headline */
-
-h1{
-font-size:12vw;
-font-weight:900;
-color:#ff0033;
-text-shadow:0 0 25px rgba(255,0,0,0.8);
+input{
+padding:12px;
+width:260px;
+margin-top:25px;
+font-size:16px;
 }
 
-/* Offer text */
-
-.offer{
-font-size:4vw;
-margin-bottom:40px;
-font-weight:bold;
-}
-
-/* Payment button */
-
-.paybtn{
-padding:22px 60px;
-font-size:28px;
-font-weight:bold;
-background:#ff0033;
+button{
+padding:15px 35px;
+margin-top:20px;
+background:red;
 color:white;
 border:none;
-border-radius:14px;
+font-size:18px;
 cursor:pointer;
-transition:0.3s;
-box-shadow:0 0 20px rgba(255,0,0,0.7);
-}
-
-.paybtn:hover{
-transform:scale(1.1);
-background:#cc0029;
-box-shadow:0 0 40px rgba(255,0,0,1);
-}
-
-.note{
-margin-top:20px;
-font-size:16px;
-opacity:0.8;
+border-radius:8px;
 }
 
 </style>
@@ -78,54 +43,43 @@ opacity:0.8;
 
 <body>
 
-<div class="container">
+<h1>Pay ₹99 to Unlock Videos</h1>
 
-<h1>LIVE OFFER</h1>
+<p>Scan QR or pay via UPI</p>
 
-<p class="offer">
-Pay ₹99 For Lifetime Access<br>
-Private Videos
-</p>
+<img src="qr.png">
 
-<button id="paybtn" class="paybtn">
-Pay ₹99 Now
+<br>
+
+<input id="txnid" placeholder="ghapa@ptaxis">
+
+<br>
+
+<button onclick="verifyPayment()">
+Verify Payment
 </button>
-
-<p class="note">
-Secure payment powered by Razorpay
-</p>
-
-</div>
 
 <script>
 
-var options = {
+function verifyPayment(){
 
-key: "rzp_live_SQBDiRRFf79VdN",
+var txn = document.getElementById("txnid").value;
 
-amount: "9900",
+/* basic UPI txn format check */
 
-currency: "INR",
+if(txn.length < 8){
 
-name: "Premium Videos",
+alert("Invalid Transaction ID");
 
-description: "Lifetime Access",
-
-handler: function (response){
-
-window.location.href = "videos.html";
+return;
 
 }
 
-};
+/* unlock videos */
 
-var rzp = new Razorpay(options);
+localStorage.setItem("paid","yes");
 
-document.getElementById("paybtn").onclick = function(e){
-
-rzp.open();
-
-e.preventDefault();
+window.location.href = "videos.html";
 
 }
 
