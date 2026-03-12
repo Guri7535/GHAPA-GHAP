@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Premium Video Library</title>
+
+<style>
+
+body{
+margin:0;
+background:#000;
+color:white;
+font-family:Arial;
+}
+
+h1{
+text-align:center;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:#111;
+padding:10px;
+border-radius:10px;
+}
+
+iframe{
+width:100%;
+height:200px;
+border-radius:8px;
+}
+
+.title{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Premium Video Library</h1>
+
+<div class="grid" id="videos"></div>
+
+<script>
+
+var videoList = [
+
+{
+title:"Video 1",
+link:"https://www.youtube.com/embed/VIDEOID1"
+},
+
+{
+title:"Video 2",
+link:"https://www.youtube.com/embed/VIDEOID2"
+},
+
+{
+title:"Video 3",
+link:"https://www.youtube.com/embed/VIDEOID3"
+}
+
+];
+
+var container = document.getElementById("videos");
+
+videoList.forEach(function(video){
+
+container.innerHTML += `
+<div class="card">
+<iframe src="${video.link}" allowfullscreen></iframe>
+<div class="title">${video.title}</div>
+</div>
+`;
+
+});
+
+</script>
+
+</body>
+</html>
