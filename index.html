@@ -1,20 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Premium Video Collection</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+color:white;
+text-align:center;
+overflow:hidden;
+}
+
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.65);
+z-index:-1;
+}
+
+.content{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+h1{
+font-size:50px;
+font-weight:bold;
+}
+
+p{
+font-size:22px;
+font-weight:bold;
+margin-bottom:30px;
+}
+
+button{
+padding:16px 35px;
+font-size:20px;
+background:#ff0033;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#cc0029;
+transform:scale(1.05);
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>Premium Video Collection</header>
+<video autoplay muted loop playsinline>
+<source src="background.mp4" type="video/mp4">
+</video>
 
-<div class="container hero">
+<div class="overlay"></div>
+
+<div class="content">
 
 <h1>Exclusive Premium Videos</h1>
-<p>Watch our private premium content instantly</p>
 
-<br>
+<p>Watch Private Premium Content Instantly</p>
 
 <a href="payment.html">
 <button>Unlock All Videos ₹99</button>
