@@ -12,11 +12,19 @@ body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
 color:white;
-height:100vh;
-background-image:url('background.jpg');
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+overflow:hidden;
+}
+
+/* Background video */
+
+video{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
 /* Dark overlay */
@@ -27,7 +35,8 @@ top:0;
 left:0;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.65);
+background:rgba(0,0,0,0.6);
+z-index:-1;
 }
 
 /* Center content */
@@ -41,19 +50,18 @@ text-align:center;
 width:90%;
 }
 
-/* Huge title */
+/* Big title */
 
 h1{
-font-size:10vw;
+font-size:9vw;
 font-weight:900;
-margin-bottom:10px;
-line-height:1.1;
+margin-bottom:15px;
 }
 
 /* Subtitle */
 
 p{
-font-size:4vw;
+font-size:3vw;
 margin-bottom:40px;
 font-weight:bold;
 }
@@ -61,7 +69,7 @@ font-weight:bold;
 /* Button */
 
 button{
-padding:18px 40px;
+padding:18px 45px;
 font-size:20px;
 background:#ff0033;
 border:none;
@@ -73,7 +81,7 @@ transition:0.3s;
 
 button:hover{
 background:#cc0029;
-transform:scale(1.08);
+transform:scale(1.1);
 }
 
 </style>
@@ -81,6 +89,10 @@ transform:scale(1.08);
 </head>
 
 <body>
+
+<video autoplay muted loop playsinline>
+<source src="background.mp4" type="video/mp4">
+</video>
 
 <div class="overlay"></div>
 
