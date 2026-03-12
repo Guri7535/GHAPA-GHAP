@@ -2,39 +2,86 @@
 
 <html>
 <head>
-<title>UPI Payment</title>
+<title>Unlock Premium Videos</title>
 
 <style>
 
 body{
-background:black;
+margin:0;
+font-family:Arial, sans-serif;
 color:white;
-font-family:Arial;
 text-align:center;
-padding-top:80px;
+background:linear-gradient(135deg,#000000,#1c1c1c,#000000);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
 }
 
-img{
-width:220px;
+.container{
+width:90%;
+max-width:420px;
+}
+
+h1{
+font-size:34px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+p{
+font-size:18px;
+opacity:0.8;
+}
+
+.qr{
+width:240px;
+margin:20px auto;
+border-radius:12px;
+border:3px solid #333;
+}
+
+.upi-icons{
+display:flex;
+justify-content:center;
+gap:25px;
 margin-top:20px;
 }
 
+.upi-icons img{
+width:70px;
+height:70px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.upi-icons img:hover{
+transform:scale(1.15);
+}
+
 input{
-padding:12px;
-width:260px;
+width:90%;
+padding:14px;
 margin-top:25px;
+border-radius:8px;
+border:none;
 font-size:16px;
 }
 
 button{
-padding:15px 35px;
+padding:16px 40px;
 margin-top:20px;
-background:red;
-color:white;
+background:#ff2a2a;
 border:none;
-font-size:18px;
+border-radius:10px;
+font-size:20px;
+color:white;
 cursor:pointer;
-border-radius:8px;
+font-weight:bold;
+}
+
+button:hover{
+background:#ff0000;
 }
 
 </style>
@@ -43,29 +90,43 @@ border-radius:8px;
 
 <body>
 
+<div class="container">
+
 <h1>Pay ₹99 to Unlock Videos</h1>
 
-<p>Scan QR or pay via UPI</p>
+<p>Scan QR or pay using UPI apps</p>
 
-<img src="qr.png">
+<img src="qr.png" class="qr">
+
+<div class="upi-icons">
+
+<a href="upi://pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
+<img src="gpay.png">
+</a>
+
+<a href="upi://pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
+<img src="phonepe.png">
+</a>
+
+<a href="upi://pay?pa=ghapa@ptaxis&pn=YourName&am=99&cu=INR">
+<img src="paytm.png">
+</a>
+
+</div>
+
+<input id="txnid" placeholder="Enter UPI Transaction ID">
 
 <br>
 
-<input id="txnid" placeholder="ghapa@ptaxis">
+<button onclick="verifyPayment()">Verify Payment</button>
 
-<br>
-
-<button onclick="verifyPayment()">
-Verify Payment
-</button>
+</div>
 
 <script>
 
 function verifyPayment(){
 
 var txn = document.getElementById("txnid").value;
-
-/* basic UPI txn format check */
 
 if(txn.length < 8){
 
@@ -75,11 +136,9 @@ return;
 
 }
 
-/* unlock videos */
-
 localStorage.setItem("paid","yes");
 
-window.location.href = "videos.html";
+window.location.href="videos.html";
 
 }
 
