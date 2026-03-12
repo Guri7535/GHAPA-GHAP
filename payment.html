@@ -1,22 +1,99 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-<title>Payment</title>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Offer</title>
+
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+font-family:Arial, Helvetica, sans-serif;
+background:#000;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+}
+
+/* Container */
+
+.container{
+width:90%;
+}
+
+/* Huge headline */
+
+h1{
+font-size:12vw;
+font-weight:900;
+color:#ff0033;
+text-shadow:0 0 25px rgba(255,0,0,0.8);
+}
+
+/* Offer text */
+
+.offer{
+font-size:4vw;
+margin-bottom:40px;
+font-weight:bold;
+}
+
+/* Payment button */
+
+.paybtn{
+padding:22px 60px;
+font-size:28px;
+font-weight:bold;
+background:#ff0033;
+color:white;
+border:none;
+border-radius:14px;
+cursor:pointer;
+transition:0.3s;
+box-shadow:0 0 20px rgba(255,0,0,0.7);
+}
+
+.paybtn:hover{
+transform:scale(1.1);
+background:#cc0029;
+box-shadow:0 0 40px rgba(255,0,0,1);
+}
+
+.note{
+margin-top:20px;
+font-size:16px;
+opacity:0.8;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>Unlock Premium Videos</header>
-
 <div class="container">
 
-<h2>Pay ₹99 to watch all videos</h2>
+<h1>LIVE OFFER</h1>
 
-<br>
+<p class="offer">
+Pay ₹99 For Lifetime Access<br>
+Private Videos
+</p>
 
-<button id="payBtn">Pay Now</button>
+<button id="paybtn" class="paybtn">
+Pay ₹99 Now
+</button>
+
+<p class="note">
+Secure payment powered by Razorpay
+</p>
 
 </div>
 
@@ -24,19 +101,19 @@
 
 var options = {
 
-key: "YOUR_RAZORPAY_KEY",
+key: "rzp_live_SQBDiRRFf79VdN",
 
-amount: "9900",
+amount: "99",
 
 currency: "INR",
 
 name: "Premium Videos",
 
-description: "Video Access",
+description: "Lifetime Access",
 
-handler: function(response){
+handler: function (response){
 
-window.location.href="videos.html";
+window.location.href = "videos.html";
 
 }
 
@@ -44,7 +121,7 @@ window.location.href="videos.html";
 
 var rzp = new Razorpay(options);
 
-document.getElementById('payBtn').onclick = function(e){
+document.getElementById("paybtn").onclick = function(e){
 
 rzp.open();
 
