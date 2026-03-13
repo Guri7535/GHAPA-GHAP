@@ -87,7 +87,47 @@ transform:scale(1.1);
 </style>
 
 </head>
+<script>
 
+// random viewer counter
+function updateViewers(){
+
+var viewers = Math.floor(Math.random() * 70) + 90;
+
+document.getElementById("viewers").innerHTML =
+"🔥 " + viewers + " people watching this page now";
+
+}
+
+setInterval(updateViewers,4000);
+updateViewers();
+
+
+// random timer 1-5 minutes
+var time = Math.floor(Math.random()*240)+60;
+
+function updateTimer(){
+
+var minutes = Math.floor(time/60);
+var seconds = time%60;
+
+document.getElementById("timer").innerHTML =
+"Offer ends in " +
+minutes.toString().padStart(2,'0') + ":" +
+seconds.toString().padStart(2,'0');
+
+if(time>0){
+time--;
+}else{
+time = Math.floor(Math.random()*240)+60;
+}
+
+}
+
+setInterval(updateTimer,1000);
+updateTimer();
+
+</script>
 <body>
 
 <video autoplay muted loop playsinline>
@@ -102,8 +142,22 @@ transform:scale(1.1);
 
 <p>Watch Private Premium Content Instantly</p>
 
+  <div id="viewers">🔥 128 people watching this page now</div>
+
 <a href="payment.html">
-<button>Unlock All Videos ₹99</button>
+
+<button id="offerBtn">
+
+<div class="price">
+<s>₹499</s> ₹99
+</div>
+
+<div id="timer">Offer ends in 01:02:00</div>
+
+<div class="limited">LIMITED OFFER</div>
+
+</button>
+
 </a>
 
 </div>
